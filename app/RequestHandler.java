@@ -1,10 +1,11 @@
 import play.http.HttpRequestHandler;
-import play.libs.F;
 import play.mvc.Action;
 import play.mvc.Http;
 import play.mvc.Result;
 
 import java.lang.reflect.Method;
+
+import java.util.concurrent.CompletionStage;
 
 public class RequestHandler implements HttpRequestHandler {
 
@@ -12,7 +13,7 @@ public class RequestHandler implements HttpRequestHandler {
     public Action createAction(Http.Request request, Method actionMethod) {
         return new Action.Simple() {
             @Override
-            public F.Promise<Result> call(Http.Context ctx) throws Throwable {
+            public CompletionStage<Result> call(Http.Context ctx) {
                 System.out.println("In custom requesthandler");
                 return delegate.call(ctx);
             }
