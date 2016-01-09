@@ -13,6 +13,7 @@ public class Application extends Controller {
 
     @MethodAnnotation
     public Result index() {
+        System.out.println("In index");
         return ok(index.render("Your new application is ready."));
     }
 

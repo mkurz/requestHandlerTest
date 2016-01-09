@@ -13,6 +13,7 @@ public class RequestHandler implements HttpRequestHandler {
         return new Action.Simple() {
             @Override
             public F.Promise<Result> call(Http.Context ctx) throws Throwable {
+                System.out.println("In custom requesthandler");
                 return delegate.call(ctx);
             }
         };

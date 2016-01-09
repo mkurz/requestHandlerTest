@@ -9,6 +9,7 @@ public class ClassAnnotationAction extends Action<ClassAnnotation> {
 	
 	@Override
 	public Promise<Result> call(final Context ctx) throws Throwable {
+        System.out.println("In ClassAnnotation");
 		return this.delegate.call(ctx);
 	}
 
